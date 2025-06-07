@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE junk
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# TypeScript cache
+*.tsbuildinfo
