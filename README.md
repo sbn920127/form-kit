@@ -6,15 +6,9 @@
 
 ## 功能特色
 
-- ✅ 以 metadata 定義欄位與步驟結構
-- ✅ 型別安全的表單控制邏輯（泛型支援）
-- ✅ 欄位條件顯示 / disabled / readonly 控制
-- ✅ 自動產生 `defaultValues` 與 Zod 驗證 schema
-- ✅ 不綁定 UI 元件框架，可整合 MUI、Chakra、Tailwind 等
+- 以 metadata 定義欄位與步驟結構
+- 型別安全的表單控制邏輯（泛型支援）
+- 欄位條件顯示 / disabled / readonly 控制
+- 自動產生 `defaultValues` 與 Zod 驗證 schema
+- 不綁定 UI 元件框架，可整合 MUI、Chakra、Tailwind 等
 
----
-
-## 安裝方式
-
-```bash
-pnpm install @your-org/form-kit
