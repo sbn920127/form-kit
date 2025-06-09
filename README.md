@@ -1,14 +1,33 @@
-# form-kit
+# @sbn/form-kit
 
-一套 **基於 metadata 驅動、具型別安全的多步驟表單邏輯工具套件**，可用於 React 專案中，支援欄位條件渲染、自動預設值、Zod 驗證等功能。
+一套基於欄位定義與 metadata 驅動的 React 表單邏輯工具包，專注於邏輯與型別安全，並與 UI 呈現層解耦。可應用於多步驟表單、動態欄位渲染、條件驗證等場景。
 
 ---
 
-## 功能特色
+## 特性
 
-- 以 metadata 定義欄位與步驟結構
-- 型別安全的表單控制邏輯（泛型支援）
-- 欄位條件顯示 / disabled / readonly 控制
-- 自動產生 `defaultValues` 與 Zod 驗證 schema
-- 不綁定 UI 元件框架，可整合 MUI、Chakra、Tailwind 等
+- 型別安全的欄位設定（FieldConfig）
+- 多步驟流程邏輯控制
+- 支援欄位條件顯示、欄位禁用、唯讀
+- 預設值自動產生
+- 驗證規則支援 Zod
+- 可搭配任何 UI 元件庫（如 MUI、Tailwind、Chakra）
+- 可單獨使用某些模組（例如只用 useFormController）
 
+---
+
+## 安裝方式
+
+### 方式一：本地安裝（適用於 monorepo）
+
+```bash
+pnpm add file:../../packages/form-kit
+```
+
+### 方式二：從 GitHub 安裝（推薦用於正式專案）
+
+如果要在其他專案或新電腦上使用這個套件，可以直接執行：
+
+```bash
+pnpm add git+https://github.com/sbn920127/form-kit.git
+```
