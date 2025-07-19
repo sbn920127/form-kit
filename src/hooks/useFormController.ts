@@ -1,14 +1,9 @@
 import { useState } from 'react';
-import { FieldConfig } from "types/fieldTypes";
+import { FormStep } from "types/fieldTypes";
 
-export type Step = {
-    fields: FieldConfig[];
-    key: string;
-}
-
-export const useFormController = (steps: Step[]) => {
+export const useFormController = (steps: FormStep[], initialValues: Record<string, any> = {}) => {
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
-    const [values, setValues] = useState<Record<string, any>>({})
+    const [values, setValues] = useState<Record<string, any>>(initialValues)
     const [errors, setErrors] = useState<Record<string, any>>({});
 
     const currentStep = steps[currentStepIndex];
@@ -17,13 +12,13 @@ export const useFormController = (steps: Step[]) => {
         setValues((prev: Record<string, any>) => ({...prev, [key]: value}));
     }
 
-    const next = () => {
+    const onNext = () => {
         if (currentStepIndex < steps.length - 1) {
             setCurrentStepIndex(i => i + 1)
         }
     }
 
-    const back = () => {
+    const onBack = () => {
         if (currentStepIndex > 0) {
             setCurrentStepIndex((i: number) => i - 1)
         }
@@ -41,8 +36,8 @@ export const useFormController = (steps: Step[]) => {
         values,
         errors,
         updateValue,
-        next,
-        back,
+        onNext,
+        onBack,
         setFieldError,
         clearErrors,
     }
